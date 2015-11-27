@@ -1,0 +1,30 @@
+<head>
+  <title>meteor-chat</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Welcome to Chicken Scratch!</h1>
+      {{> loginButtons }}
+      {{#if currentUser}}
+        <form class="new-message">
+          <input style="color: #white;" type="text" name="text" placeholder="enter message here" />
+        </form>
+      {{/if}}
+    </header>
+    
+    <ul>
+      {{#each messages}}
+        {{> message}}
+      {{/each}}
+    </ul>
+
+  </div>
+</body>
+
+<template name="message">
+  <li>
+    <span class="text"><strong>{{username}}</strong> - {{text}} </span>
+  </li>
+</template>
